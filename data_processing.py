@@ -7,35 +7,24 @@ import numpy as np
 
  
 class DataClean():
-    
-    def __init__(self, csv):
-        self.csv = csv
- 
 
-    def read_scale(self, csv):
+
+    def scale(self, df):
         
-        data = pd.read_csv(csv, index_col=0)
-        scale = StandardScaler()
-        num = data.select_dtypes(include=['float64'])
-        cat = data.drop(columns = num.columns)
+        scale = MinMaxScaler()
+        num = df.select_dtypes(include=['float64'])
+        cat = df.drop(columns = num.columns)
         num_scale = pd.DataFrame(scale.fit_transform(num), columns = num.columns, index = num.index)
         df_mm = pd.concat([num_scale, cat], axis = 1)
 
-        return df_mm, num_scale
+        return df_mm
 
 
-    def split(self,csv,y):
+    def split(self, df, target):
 
-        df_mm, num_scale = self.read_scale(csv)
-
-        X = num_scale
-        y = df_mm[y]
+        X = df.drop(target,axis=1)
+        y = df[target]
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
         
-        dataframes = [X_train, X_test, y_train, y_test]
-        
-        for df in [X_train,X_test,y_train,y_test]:
-            df.reset_index(inplace=True, drop=True)
-            
         return X_train, X_test, y_train, y_test

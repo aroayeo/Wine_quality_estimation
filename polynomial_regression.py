@@ -9,31 +9,23 @@ import numpy as np
 
 class PolynomialInteractions():
     
-    def __init__(self, csv, target):
-        self.csv = csv
+    def __init__(self, df, target):
+        self.df = df
         self.target = target
         
-    def get_data(self, csv,target):
+    def poly(self, df, target):
         
-        d = DataClean(csv) # call class to import and process data 
-        df_mm, num_scale = d.read_scale(csv)
-        return df_mm, num_scale
-        
-    def poly(self, csv, target):
-        
-        df_mm, num_scale = self.get_data(csv,target)
-        X_train = num_scale
-        y_train = df_mm[target]
+        X_train = self.df.drop(target, axis=1)
+        y_train = self.df[target]
         
         # running polynomial model to get interactions
         p = PolynomialFeatures(degree=2).fit(X_train)
         X = pd.DataFrame(p.transform(X_train), columns=p.get_feature_names(X_train.columns))
         return X
     
-    def get_interactions(self, csv,target):
-        X = self.poly(csv,target)
-        df_mm, num_scale = self.get_data(csv,target)
-        y_train = df_mm[target]
+    def get_interactions(self, df,target):
+        X = self.poly(df,target)
+        y_train = df[target]
         
         #passing polynomial features through OLS
         X = sm.add_constant(X) 
@@ -46,18 +38,16 @@ class PolynomialInteractions():
         pvalues.index = X.columns
         return pvalues
         
-    def new_features(self,csv,target):
+    def new_features(self,df,target):
         
-        df_mm, num_scale = self.get_data(csv,target)
-        X = self.poly(csv,target)
-        pvalues = self.get_interactions(csv,target)
+        pvalues = self.get_interactions(df,target)
         
         #filter for significant coefficients
         new_var = pvalues.loc[(pvalues['P>|t|'] <= 0.05)]
-        new_var = new_var.drop('1', axis=0)
+#         new_var = new_var.drop('1', axis=0)
         #creating new variables
         interactions = list(new_var.index)
-        original = list(num_scale.columns)
+        original = list(self.df.columns)
         names_list = list(set(interactions) - set(original))
         names_list = [x for x in names_list if '^' not in x]  
         names = []
@@ -67,10 +57,10 @@ class PolynomialInteractions():
         return names, names_list
     
     
-    def add_to_df(self,csv,target):
+    def add_to_df(self,df,target,name_csv):
         
-        df_mm, num_scale = self.get_data(csv, target)
-        names, names_list = self.new_features(csv,target)
+        df_mm = df
+        names, names_list = self.new_features(df,target)
         
         one = []
         two = []
@@ -81,5 +71,5 @@ class PolynomialInteractions():
         for a, b, c in zip(one,two, names_list):
             df_mm[c] = df_mm[a] * df_mm[b]
         
-        df_mm.to_csv('interactions.csv')
-        return df_mm
+        df_mm.to_csv('{}.csv'.format(name_csv))
+        

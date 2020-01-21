@@ -25,8 +25,8 @@ def run_models(x_train,y_train,x_test,y_test):
     models = [('clf', DecisionTreeClassifier()),
             ('rf', RandomForestClassifier()),
             ('knn', KNeighborsClassifier()),
-            ('svm', SVC()),
-            ('lg', LogisticRegression())]
+            ('svm', SVC())]
+#             ('lg', LogisticRegression())]
 
 
     spaces = [[{"clf": [DecisionTreeClassifier()],
@@ -41,10 +41,10 @@ def run_models(x_train,y_train,x_test,y_test):
                         'knn__p': [1,2]}],
                     [{"svm" : [SVC()],
                         'svm__kernel': ['linear','rbf', 'sigmoid'],
-                        'svm__decision_function_shape': ['ovo', 'ovr']}],
-                    [{ "lg" : [LogisticRegression()],
-                        "lg__penalty": ['l1', 'l2'],
-                        "lg__C": np.logspace(0, 4, 10)}]]
+                        'svm__decision_function_shape': ['ovo', 'ovr']}]]
+#                     [{ "lg" : [LogisticRegression()],
+#                         "lg__penalty": ['l1', 'l2'],
+#                         "lg__C": np.logspace(0, 4, 10)}]]
 
 
     g_p = []
@@ -65,4 +65,4 @@ def run_models(x_train,y_train,x_test,y_test):
         g_p.append(gp)
         
         
-        return g_p, b_e, y_pred_p
+    return g_p, b_e, y_pred_p
