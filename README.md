@@ -29,7 +29,8 @@ For those small business owners trying to make their way into a very competitive
 
 We want to help those entrepreneurs with will and passion but little wine background. This product is to enable the young inexperienced wine tasters, winemakers and wine brokers to better choose and impartially identify different wine qualities avoiding the tasting and valuation cost and logistics. 
 
-To jump to the conclusions click [here](### Conclusion and Limitations)
+To jump to the conclusions click [here](<a here='Conclusion and Limitations'></a>
+
 
 ### Data Description:
 
