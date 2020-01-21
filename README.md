@@ -6,9 +6,9 @@ Author - Aroa Gomez
 
  - Classes .py files: [dataclean](dataclean.py), [models](models.py)
  - Notebooks:    
-         - [Data_exploration](Data_exploration.ipynb)
-         - [Class_model](Class_model.ipybn): model specification and optimization 
-         - [Type_class](Type_class.ipybn): wine or red wine prediction   
+         - [Data_exploration](Data_exploration.ipynb): data analysis   
+         - [Class_model](Class_model.ipybn): model specification and optimization    
+         - [Type_class](Type_class.ipybn): wine or red wine prediction      
  - csv files:   
          - red.csv (red wine data)   
          - white.csv (white wine data)   
