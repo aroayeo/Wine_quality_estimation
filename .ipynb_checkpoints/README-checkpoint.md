@@ -6,15 +6,13 @@ Author - Aroa Gomez
 
  - Classes .py files: [dataclean](dataclean.py), [models](models.py)
  - Notebooks:    
-         - [Data_exploration](Data_exploration.ipynb)
-         - [Class_model](Class_model.ipybn): model specification and optimization 
-         - [Type_class](Type_class.ipybn): wine or red wine prediction   
- - csv files:   
-         - red.csv (red wine data)   
-         - white.csv (white wine data)   
-         - data_client (subset of data for client wines prediction)   
-         - client_reports is not visible due to confidenciality
-
+         - [Data_exploration](Data_exploration.ipynb): data analysis   
+         - [Class_model](Class_model.ipybn): model specification and optimization    
+         - [Type_class](Type_class.ipybn): wine or red wine prediction      
+ - Presentation pdf:   
+         - [Wine Quality & Machine Learning](Wine_Quality_&_Machine_Learning.pdf)
+        
+        
 ### Project Motivation 
 
 The wine industry has kept growing steadily for the past 19 years and, as in any other growing industry, new players come to take part in it. The biggest wine producers in the world in 2019 were Italy, France, Spain and the USA. On the other hand we have the new players, China for instance is the largest grape producer reaching 11,7 tones in 2019.
@@ -29,7 +27,6 @@ For those small business owners trying to make their way into a very competitive
 
 We want to help those entrepreneurs with will and passion but little wine background. This product is to enable the young inexperienced wine tasters, winemakers and wine brokers to better choose and impartially identify different wine qualities avoiding the tasting and valuation cost and logistics. 
 
-To jump to the conclusions click [here](### Conclusion and Limitations)
 
 ### Data Description:
 
