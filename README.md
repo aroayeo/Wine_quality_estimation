@@ -2,18 +2,18 @@
 
 Author - Aroa Gomez
 
-### Repo Content
+### Repository Content
 
- - Classes .py files: csv_clean, define_classes, ordinal, pca, pipe, polynomial_regression
- - Notebooks: 
-         - Data_exploration, 
-         - Client_model: model specification and optimization
-         - Type_class: wine or red wine prediction
- - csv files:
-         - red.csv (red wine data)
-         - white.csv (white wine data)
-         - data_client (subset of data for client wines prediction)
-         - client_reports is not visible due to confidenciality
+ - Classes .py files: csv_clean, define_classes, ordinal, pca, pipe, polynomial_regression   
+ - Notebooks:    
+         - Data_exploration   
+         - Client_model: model specification and optimization   
+         - Type_class: wine or red wine prediction   
+ - csv files:   
+         - red.csv (red wine data)   
+         - white.csv (white wine data)   
+         - data_client (subset of data for client wines prediction)   
+         - client_reports is not visible due to confidenciality   
 
 ### Project Motivation
 
@@ -124,11 +124,15 @@ In order to evaluate our first client product we retrained our models removing t
 
 ### Conclusion and Limitations
 
-- We can confidently estimate good/average wines for our potential clients but there is limited predictive power identifying very good or poor quality wines due to the large class imbalance in our data set. 
+- We can confidently estimate good/average wines for our potential clients but there is limited predictive power identifying very good or poor quality wines due to the large class imbalance in our data set.
+
+- The model is dependent of previous winetaster ratings so it keeps some of the rating bias
+
+- Not all types of wines are captured, sparkling and rose for instance can't be rated.
 
 - Different clients and different labs reports will contain these features in slightly different manner or metrics, for implementation purpose these factors should be considered.
 
-- Retraining models with different features seems to not lose accuracy in the model but different approach to deal with missing values could be considered
+- Retraining models with different features seems to not lose accuracy in the model but different approach to deal with missing values could be considered.
 
 - Collecting more data from different wine qualities and regions could considerably improve our model for class 0 and 2. 
 
