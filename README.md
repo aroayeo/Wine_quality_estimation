@@ -10,7 +10,7 @@ Author - Aroa Gomez
          - [Class_model](Class_model.ipybn): model specification and optimization    
          - [Type_class](Type_class.ipybn): wine or red wine prediction      
  - Presentation pdf:   
-         - [Wine Quality & Machine Learning](Wine Quality & Machine Learning.pdf)
+         - [Wine_Quality_&_Machine_Learning](Wine_Quality_&_Machine_Learning.pdf)
         
         
 ### Project Motivation 
