@@ -9,12 +9,10 @@ Author - Aroa Gomez
          - [Data_exploration](Data_exploration.ipynb): data analysis   
          - [Class_model](Class_model.ipybn): model specification and optimization    
          - [Type_class](Type_class.ipybn): wine or red wine prediction      
- - csv files:   
-         - red.csv (red wine data)   
-         - white.csv (white wine data)   
-         - data_client (subset of data for client wines prediction)   
-         - client_reports is not visible due to confidenciality
-
+ - Presentation pdf:   
+        - [Wine Quality & Machine Learning.pdf](Wine Quality & Machine Learning.pdf)
+        
+        
 ### Project Motivation 
 
 The wine industry has kept growing steadily for the past 19 years and, as in any other growing industry, new players come to take part in it. The biggest wine producers in the world in 2019 were Italy, France, Spain and the USA. On the other hand we have the new players, China for instance is the largest grape producer reaching 11,7 tones in 2019.
